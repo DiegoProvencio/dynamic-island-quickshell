@@ -27,8 +27,8 @@ Scope {
     Process {
         id: watcher
         command: root.firstPoll
-            ? ["/home/fokus/island-shell/earbud-island-watch.sh", "--reset"]
-            : ["/home/fokus/island-shell/earbud-island-watch.sh"]
+            ? [Quickshell.shellDir + "/earbud-island-watch.sh", "--reset"]
+            : [Quickshell.shellDir + "/earbud-island-watch.sh"]
         stdout: StdioCollector { id: output }
         onExited: {
             root.firstPoll = false
